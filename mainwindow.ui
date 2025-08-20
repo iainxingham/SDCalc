@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>58</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mean:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>240</y>
+      <width>111</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Standard error:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>290</y>
+      <width>58</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Variance:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>340</y>
+      <width>91</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sample size:</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>100</y>
+      <width>341</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Confidence intervals:</string>
+    </property>
+    <widget class="QRadioButton" name="ci90">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>90%</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="ci95">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>80</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>95%</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="ci99">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>80</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>99%</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>to</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lowerci_in">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>113</width>
+       <height>32</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="upperci_in">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>40</y>
+       <width>113</width>
+       <height>32</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="mean_in">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>50</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="se_in">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>230</y>
+      <width>141</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="variance_in">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>280</y>
+      <width>141</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="n_in">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>141</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="calc_but">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>400</y>
+      <width>211</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>170</y>
+      <width>58</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>180</y>
+      <width>251</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Results</string>
+    </property>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>58</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mean:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>131</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Standard deviation:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sample size: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mean_res">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>40</y>
+       <width>58</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sd_res">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>58</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="n_res">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>100</y>
+       <width>58</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="clear_but">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>400</y>
+      <width>88</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
