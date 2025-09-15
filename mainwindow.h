@@ -20,7 +20,12 @@ public:
 private slots:
     void on_clear_but_clicked();
 
+    void on_calc_but_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    void errorBox(QString err);
+    double getT(double p, unsigned df);
 };
 #endif // MAINWINDOW_H
