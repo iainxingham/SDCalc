@@ -22,6 +22,8 @@ private slots:
 
     void on_calc_but_clicked();
 
+    void on_copy_but_clicked();
+
 private:
     Ui::MainWindow *ui;
 

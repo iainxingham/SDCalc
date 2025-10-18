@@ -1,5 +1,6 @@
 #include <QMessageBox>
 #include <QtMath>
+#include <QClipboard>
 
 #include <boost/math/distributions/students_t.hpp>
 
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->copy_lab->setText("");
 }
 
 MainWindow::~MainWindow()
@@ -32,6 +34,8 @@ void MainWindow::on_clear_but_clicked()
     ui->n_res->setText("-");
     ui->sd_res->setText("-");
     ui->mean_res->setText("-");
+
+    ui->copy_lab->setText("");
 }
 
 
@@ -43,7 +47,10 @@ void MainWindow::on_calc_but_clicked()
     unsigned n;
     bool ok;
 
+    ui->copy_lab->setText("");
+
     mean = ui->mean_in->text().toDouble(&ok);
+
     if(not ok) {
         errorBox("Mean missing or invalid");
         ui->mean_res->setText("-");
@@ -124,5 +131,24 @@ double MainWindow::getT(double p, unsigned int df)
     boost::math::students_t dist(df);
 
     return quantile(complement(dist, p / 2));
+}
+
+
+void MainWindow::on_copy_but_clicked()
+{
+    if((ui->mean_res->text() == "-") or
+        (ui->sd_res->text() == "-") or
+        (ui->n_res->text() == "-")
+        ) {
+        errorBox("No results to export");
+        return;
+    }
+
+    QClipboard *clip = QGuiApplication::clipboard();
+    clip->setText(ui->mean_res->text() + "\t" +
+                  ui->sd_res->text() + "\t" +
+                  ui->n_res->text());
+
+    ui->copy_lab->setText("Copied!");
 }
 

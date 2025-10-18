@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Calculate standard deviation</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -314,7 +314,7 @@
    <widget class="QPushButton" name="clear_but">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>640</x>
       <y>400</y>
       <width>88</width>
       <height>34</height>
@@ -322,6 +322,38 @@
     </property>
     <property name="text">
      <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="copy_but">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>400</y>
+      <width>161</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Copy to clipboard</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="copy_lab">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>80</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>19</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Copied!</string>
     </property>
    </widget>
   </widget>
